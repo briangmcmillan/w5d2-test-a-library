@@ -5,7 +5,6 @@
     var one = function (selector) {
         return document.querySelector(selector)
     }
-
     var add = function() {
         var numbers = Array.from(arguments)
 
@@ -15,12 +14,10 @@
 
         return total
     }
-
     //Number 2
     var all = function (selector) {
         return document.querySelectorAll(selector)
     }
-
     //Number 3
     // var remove = function (selector) {
     //     return document.querySelector(selector).remove()
@@ -29,7 +26,6 @@
     var remove = function (selector) {
         one(selector).remove()
     }
-
     // //Number 4
     // var addClass = function (selector, className) {
     //     return document.querySelector(selector).classList.add(className)
@@ -38,7 +34,6 @@
     var addClass = function (selector, className) {
         one(selector).classList.add(className)
     }
-
     //Number 5
     // var removeClass = function (selector, className) {
     //     return document.querySelector(selector).classList.remove(className)
@@ -47,7 +42,6 @@
     var removeClass = function (selector, className) {
         one(selector).classList.remove(className)
     }
-
     //Number 6
     // var hasClass = function (tag, className) {
     //     return document.querySelector(tag).classList.contains(className)
@@ -55,7 +49,6 @@
     var hasClass = function(selector, className) {
         one(selector).classList.contains(className)
     }
-
     //Number 7
     // var getAttr = function (selector, attribute) {
     //     return document.querySelector(selector).getAttribute(attribute)
@@ -64,7 +57,6 @@
     var getAttr = function (selector, attribute) {
         return one(selector).getAttribute(attribute)
     }
-
     //Number 8
     // var setAttr = function (selector, attriubute, value) {
     //     return document.querySelector(selector).setAttribute(attribute, value)
@@ -73,7 +65,6 @@
     var setAttr = function (selector, attribute, value) {
         one(selector).setAttribute(attribute, value)
     }
-
     //Number 9
     // var setHtml = function (selector, value) {
     //     return document.querySelector(selector).innerHTML = value
@@ -82,7 +73,6 @@
     var setHtml = function (selector, value) {
         one(selector).innerHTML = value
     }
-
     //Number 10
     // var getHtml = function (selector) {
     //     return document.querySelector(selector).innerHTML
@@ -91,7 +81,6 @@
     var getHtml = function (selector) {
         return one(selector).innerHTML
     }
-
     //Upside Down
     var flipPage = function () {
         return document.body.style.transform='rotate(180deg)'
@@ -99,6 +88,13 @@
     // var colorPage = function (colorName) {
     //     return document.body.style.backgroundColor=colorName
     // }
+
+    // // Add an ajax() function that fetches API data.
+    var ajax = function(url, successCallback) {
+        fetch(url)
+        .then(res => res.json())
+        .then(successCallback)
+    }
 
 
 
@@ -146,9 +142,9 @@
         setHtml: setHtml,
         getHtml: getHtml,
         flipPage: flipPage,
+        ajax: ajax,
         // colorPage: colorPage,
         // //Adventure Mode
-        // ajax: ajax,
         // getProp: getProp,
         // setProp: setProp,
         // getValue: getValue,

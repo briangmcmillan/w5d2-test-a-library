@@ -92,4 +92,13 @@ describe('MoDom', function() {
     //       expect(document.body.style.backgroundColor).to.equal('blue')
     //   })
     // })
+
+    //ajax
+    describe('md.ajax()', function() {
+      it('should pull in data from Swapi', function(responseData) {
+        md.ajax('http://swapi.co/api/planets/', function() {
+          responseData()
+        })
+      })
+    })
 })
