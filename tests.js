@@ -29,8 +29,8 @@ describe('MoDom', function() {
   // addClass(): Add a CSS class to an element
   describe('md.addClass()', function() {
     it('should add a CSS class', function() {
-      md.addClass('span', 'selector')
-      expect(md.one('span').classList.contains('selector')).to.be.true
+      md.addClass('body', 'test')
+      expect(document.body.classList.contains('test')).to.be.true
     })
   })
   // removeClass(): Remove a CSS class from an element
@@ -42,25 +42,22 @@ describe('MoDom', function() {
   })
   // hasClass(): Return true if an element contains a CSS class in it's CSS attribute (see classList documentation)
   describe('md.hasClass()', function() {
-    it('should return true if an element contains a class', function() {
-      md.hasClass('ul', 'nav')
-      expect(md.one('ul').classList.contains('nav')).to.be.true
+    it('should return true if an element contains a CSS class', function() {
+      expect(md.hasClass('nav','navbar')).to.be.true
     })
   })
   // getAttr(): Get an HTML attribute from an element
   describe('md.getAttr()', function() {
-    it('should get an HTML attribute from an element', function() {
-      md.getAttr('button', 'type')
-      expect(md.one('button').type).to.be.equal('button')
-      // md.getAttr('button', 'class')
-      // expect(md.one('button').classList[1]).to.be.equal('collapsed')
+    it('should return width of img tag as 200', function() {
+      expect(md.getAttr('img', 'width')).to.equal('200')
     })
   })
   // setAttr(): Set an HTML attribute on an element
   describe('md.setAttr()', function() {
-    it('should set an HTML attribute on an element', function() {
-      md.setAttr('input', 'placeholder', 'test')
-      expect(md.one('input').placeholder).to.be.equal('test')
+    it('should set img width to 500', function() {
+      md.setAttr('img', 'width', '500')
+      expect(document.querySelector('img').getAttribute('width')).to.equal('500')
+      // expect(md.getAttr('img', 'width')).to.equal('500')
     })
   })
   // setHTML(): Set the innerHTML of an element
@@ -73,18 +70,17 @@ describe('MoDom', function() {
   // getHTML(): Get the innerHTML of an element
   describe('md.getHtml()', function() {
     it('should get the innerHTML of an element', function() {
-      md.getHtml('li')
-      expect(md.one('li').innerHTML).to.be.equal('text')
+      expect(md.getHtml('li')).to.be.equal('text')
     })
   })
   //flipPage
-  describe('md.flipPage()', function() {
-    it('should flip the page upside down', function() {
-        // add your setup code here
-        md.flipPage()
-        expect(document.body.style.transform).to.equal('rotate(180deg)')
-    })
-  })
+  // describe('md.flipPage()', function() {
+  //   it('should flip the page upside down', function() {
+  //       // add your setup code here
+  //       md.flipPage()
+  //       expect(document.body.style.transform).to.equal('rotate(180deg)')
+  //   })
+  // })
     // describe('md.colorPage()', function() {
     //   it('should color the page green', function() {
     //       // add your setup code here

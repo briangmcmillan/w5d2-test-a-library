@@ -47,7 +47,7 @@
     //     return document.querySelector(tag).classList.contains(className)
     // }
     var hasClass = function(selector, className) {
-        one(selector).classList.contains(className)
+        return one(selector).classList.contains(className)
     }
     //Number 7
     // var getAttr = function (selector, attribute) {
@@ -82,9 +82,9 @@
         return one(selector).innerHTML
     }
     //Upside Down
-    var flipPage = function () {
-        return document.body.style.transform='rotate(180deg)'
-    }
+    // var flipPage = function () {
+    //     return document.body.style.transform='rotate(180deg)'
+    // }
     // var colorPage = function (colorName) {
     //     return document.body.style.backgroundColor=colorName
     // }
@@ -95,13 +95,6 @@
         .then(res => res.json())
         .then(successCallback)
     }
-
-
-
-
-
-
-
 
     // //Adventure Mode
     // // Add an ajax() function that fetches API data.
@@ -141,7 +134,7 @@
         setAttr: setAttr,
         setHtml: setHtml,
         getHtml: getHtml,
-        flipPage: flipPage,
+        // flipPage: flipPage,
         ajax: ajax,
         // colorPage: colorPage,
         // //Adventure Mode
